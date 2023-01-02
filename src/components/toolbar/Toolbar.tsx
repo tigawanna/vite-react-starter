@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
-import { TheIcon } from "../../shared/extra/TheIcon";
+import { TheIcon } from '@denniskinuthia/tiny-pkgs';
 import { User } from "../../utils/types";
 
 
@@ -40,16 +40,16 @@ export const Toolbar: React.FC<ToolbarProps> = ({
       <div className="min-w-[10%] md:px-2 h-full flex justify-center items-center gap-1 md:gap-2
          md:border-2 rounded-xl  font-bold dark:font-normal ">
 
-        {/* <div className="w-full  h-full flex justify-center items-center
+        <div className="w-full  h-full flex justify-center items-center
          hover:text-blue-700">
-        <Link to="/main">main</Link>
+        <Link to="/">main</Link>
        </div>
 
 
       <div className="w-full px-1 h-full flex justify-center items-center 
       hover:text-rose-700">
           <Link to="/test">test</Link>
-        </div> */}
+        </div> 
 
 
       </div>

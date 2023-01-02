@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { RootLayout } from './pages/index/RootLayout';
@@ -8,18 +7,18 @@ import { AuthLayout } from './pages/auth/AuthLayout';
 import { Login } from './pages/auth/Login';
 import { Signup } from './pages/auth/Signup';
 import { Test } from './components/test/Test';
-import { QueryStateWrapper } from './shared/extra/QueryStateWrapper';
-import { LoaderElipse } from './shared/loaders/Loaders';
-
+import { QueryStateWrapper,LoadingElipse } from '@denniskinuthia/tiny-pkgs';
+import { useQuery } from '@tanstack/react-query';
+import { ReactRouterError } from './shared/ReactRouterError';
 function App() {
-  const [count, setCount] = useState(0)
-   const user ={}
+
+   const user = useQuery(['user'],()=>null)
   const router = createBrowserRouter([
     {
       path: '/',
       element: <RootLayout user={user} test_mode={true} />,
       // loader:userLoader(queryClient),
-      // errorElement: <ErrorPage />,
+      errorElement: <ReactRouterError/>,
       children: [
         { index: true, element: <WelcomePage user={user} /> },
 
@@ -67,10 +66,8 @@ function App() {
 
   return (
     <QueryStateWrapper
-      error={null}
-      isError={false}
-      isLoading={false}
-      loader={<LoaderElipse />}
+    query={user}
+    loader={<LoadingElipse />}
     >
       <div className=" dark:bg-slate-900 h-full max-h-screen
        dark:text-white dark:shadow-white">

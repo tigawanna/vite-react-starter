@@ -1,7 +1,6 @@
 import React from 'react'
 import { Outlet} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 import { User } from '../../utils/types';
 
 interface AuthLayoutProps {
@@ -11,7 +10,7 @@ interface AuthLayoutProps {
 export const AuthLayout: React.FC<AuthLayoutProps> = ({user}) => {
     // const navigate = useNavigate()
     // // console.log("user ===",user)
-    // useEffect(() => {
+    // React.useEffect(() => {
     //     if (user) {
     //         if (user?.email && (user?.bio === "" || user?.avatar === "")) {
     //             navigate('/profile')
