@@ -25,9 +25,6 @@ to install the package version that this template was made with
     - react-icons
     - react-router-dom
     - tailwind
-    - tailwind-scrollbar
-    - @tailwindcss/line-clamp
-    - @tailwindcss/typography
     - zod
 
 ```
