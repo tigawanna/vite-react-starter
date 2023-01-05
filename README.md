@@ -32,3 +32,5 @@ to install the package version that this template was made with
 
 ```
 [@denniskinuthia/tiny-pkgs](https://www.npmjs.com/package/@denniskinuthia/tiny-pkgs)
+
+>Note : remember to remove the .eslintignore to enable eslint for the project
